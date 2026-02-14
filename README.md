@@ -1,13 +1,7 @@
 # Simulated Robots Package
 
-Simulation for differential drive robots using ROS2 Jazzy and Gazebo Harmonic. This package provides all of the necessary files to get a simulated robot up and running. This includes the urdf, parameters and launch files for a robot with a lidar sensor and tele-operated navigation. More sensors and functionalities will be added in future.
+Simulation for 4WD differential drive robots using ROS2 Jazzy and Gazebo Harmonic. This package provides all of the necessary files to get a simulated robot up and running. This includes the urdf, parameters and launch files for a robot with a lidar sensor and tele-operated navigation. More sensors and functionalities will be added in future.
 
-## Branches
-
-This repository has two main branches:
-
-- **`main`**: Base repository with core robot simulation functionality including URDF, Gazebo simulation, and basic tele-operation
-- **`mapping`**: Extended branch that adds mapping capabilities using SLAM Toolbox and robot localization with Extended Kalman Filter (EKF)
 
 ## Work in progress
 
@@ -47,33 +41,18 @@ sudo apt install -y                         \
 
 To use this package please download all of the necessary dependencies first and then follow these steps:
 
-### Main Branch
-
-For the base robot simulation, clone the main branch:
 
 ```bash
 mkdir -p ros2_ws/src
 cd ros2_ws/src
-git clone https://github.com/adoodevv/diff_drive_robot.git
-cd ..
-colcon build --packages-select diff_drive_robot --symlink-install
-```
-
-### Mapping Branch
-
-To use the mapping features, clone the `mapping` branch directly:
-
-```bash
-mkdir -p ros2_ws/src
-cd ros2_ws/src
-git clone -b mapping https://github.com/adoodevv/diff_drive_robot.git
+git clone -b https://github.com/snchz46/ros2_4wd_diff_drive_robot.git
 cd ..
 colcon build --packages-select diff_drive_robot --symlink-install
 ```
 
 ## Usage
 
-### Main Branch - Basic Robot Simulation
+### Basic Robot Simulation
 
 After sourcing ROS and this package, launch the 2-wheeled differential drive robot simulation:
 
@@ -92,20 +71,13 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ![Gazebo Simulation](assets/gazebo_mapping.png)
 
-### Mapping Branch - Mapping and Localization
+### Mapping and Localization
 
 The `mapping` branch extends the base functionality with:
 
 - **SLAM Toolbox**: For mapping the environment
 - **Extended Kalman Filter (EKF)**: For sensor fusion and improved odometry estimation
 - **Enhanced RViz configuration**: Pre-configured for mapping visualization
-
-#### New Configuration Files
-
-The mapping branch includes additional configuration files:
-
-- `config/slam_toolbox_mapping.yaml`: Configuration for SLAM Toolbox mapping mode
-- `config/ekf.yaml`: Extended Kalman Filter parameters for sensor fusion (odometry and IMU)
 
 #### Launching the Mapping System
 
