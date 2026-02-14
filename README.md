@@ -1,6 +1,6 @@
 # Simulated Robots Package
 
-Simulation for 4WD differential drive robots using ROS2 Jazzy and Gazebo Harmonic. This package provides all of the necessary files to get a simulated robot up and running. This includes the urdf, parameters and launch files for a robot with a lidar sensor and tele-operated navigation. More sensors and functionalities will be added in future.
+Simulation for 4WD differential drive robots using ROS2 Jazzy and Gazebo Harmonic. This package provides all of the necessary files to get a simulated robot up and running. This includes the urdf, parameters and launch files for a robot with a camera and a lidar sensor and tele-operated navigation.
 
 
 ## Work in progress
